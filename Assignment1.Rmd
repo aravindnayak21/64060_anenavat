@@ -1,0 +1,41 @@
+---
+title: "Assignment-1"
+author: "Aravind"
+date: "2024-02-01"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup}
+#Reference:
+
+#Data is taken from https://opendataphilly.org/dataset/philadelphia-universities-and-colleges/resource/baa34ebf-0352-4c33-a9f6-8ae061a50939
+
+dataset1 = read.csv("C:/Users/aravi/OneDrive/Documents/Universities List - 1.csv")
+dataset1
+
+#Quantitative Descriptive Statistics
+
+mean(dataset1$Shape__Area)
+sd(dataset1$Shape__Area)
+
+#Categorical Variables
+
+table(dataset1$Code)
+
+
+dataset1$Shape__Area = mean(dataset1$Shape__Area)- sd(dataset1$Shape__Area)
+dataset1$Shape__Area
+
+#Below is the example for Histogram of Quantitative variables
+
+#Scatter Plot
+
+hist(dataset1$Shape__Length)
+
+p = dataset1$Shape__Area
+q = dataset1$Shape__Length
+plot(p,q, main = "Area and Length", xlab = "Area", ylab = "Length")
+
+```
